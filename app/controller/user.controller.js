@@ -2,6 +2,7 @@ const pool = require('../database/config');
 
 const getUserById = async (req, res) => {
     const { id } = req.params;
+    console.log('id:', id);
 
     try {
         const result = await pool.query('SELECT * FROM users WHERE id = $1', [id]);
